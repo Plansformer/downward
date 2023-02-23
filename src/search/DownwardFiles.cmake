@@ -473,6 +473,23 @@ fast_downward_plugin(
 )
 
 fast_downward_plugin(
+    NAME PLUGIN_RANDOM_WALK
+    HELP "Random walk"
+    SOURCES
+        search_engines/plugin_random_walk
+    DEPENDS RANDOM_WALK SEARCH_COMMON
+)
+
+fast_downward_plugin(
+    NAME RANDOM_WALK
+    HELP "Random walk algorithm"
+    SOURCES
+        search_engines/random_walk
+    DEPENDS ORDERED_SET SUCCESSOR_GENERATOR
+    DEPENDENCY_ONLY
+)
+
+fast_downward_plugin(
     NAME LP_SOLVER
     HELP "Interface to an LP solver"
     SOURCES
